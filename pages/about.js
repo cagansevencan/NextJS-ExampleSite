@@ -1,9 +1,14 @@
-import Layout from "../components/layout";
+import Layout from '../components/layout'
+import Head from "next/head";
 
 function HomePage() {
-    return <Layout>
-        <h1>Merhaba</h1>
+  return (
+    <Layout>
+        <Head>
+        </Head>
+      <h1>Merhaba</h1>
     </Layout>
+  )
 }
 
 export default HomePage
