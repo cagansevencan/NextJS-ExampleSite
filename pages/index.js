@@ -7,26 +7,13 @@ function HomePage() {
         <Head>
             <title>Main Page</title>
         </Head>
-      <h1>Welcome to Next.js!</h1>
+      <h1>Welcome to my first website!</h1>
 
         <style jsx>{`
-        h1 {
-        color: white;
-        background-color: blue;
-        }
       `}
-
         </style>
 
-        <style global jsx>{`
-        body{
-        background-color: yellow;
-        }
-        
-        html{
-        color: deepskyblue;
-        }
-      `}</style>
+
     </Layout>
   )
 }

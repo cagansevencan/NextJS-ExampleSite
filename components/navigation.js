@@ -8,7 +8,7 @@ function Navigation() {
         <a className={styles.link}> Ana Sayfa</a>
       </Link>
       <Link href="/about">
-        <a style={ {color: 'pink'}}> Hakkimda</a>
+        <a> Hakkimda</a>
       </Link>
     </nav>
   )
