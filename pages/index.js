@@ -1,7 +1,7 @@
 import Layout from '../components/layout'
 import Head from "next/head";
 import unfetch from "isomorphic-unfetch";
-import { Buffer } from "buffer";
+
 import APIController from '../server/spotify-server'
 
 function HomePage({playlists}) {
