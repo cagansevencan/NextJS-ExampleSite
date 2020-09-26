@@ -6,7 +6,7 @@ function HomePage() {
     <Layout>
         <Head>
         </Head>
-      <h1>Merhaba</h1>
+      <h1>Hi!</h1>
     </Layout>
   )
 }

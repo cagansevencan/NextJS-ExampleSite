@@ -3,14 +3,56 @@ import styles from './nav.module.css'
 
 function Navigation() {
   return (
+    <header>
     <nav>
+      <p>
       <Link href="/">
-        <a className={styles.link}> Ana Sayfa</a>
+        <a className={styles.link}> Main Page</a>
       </Link>
       <Link href="/about">
-        <a> Hakkimda</a>
+        <a> About Me</a>
       </Link>
+      </p>
+
+      <p>
+        <button className={"signInButton"}>Sign In</button>
+      </p>
     </nav>
+      <style jsx>{`
+        header {
+        border-bottom: 1px solid #ccc;
+        }
+        
+        nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 120rem;
+        padding: 0.2rem 1.25rem;
+        margin: 0 6% 0 0;
+        }
+        
+        p {
+        display: flex;
+        gap: 40px;
+        }
+        
+        .signInButton{
+        background-color: #1eb1fc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        }
+        
+        .signInButton:hover {
+          background-color: #1b9fe2;
+        }
+        
+      `}</style>
+    </header>
   )
 }
 

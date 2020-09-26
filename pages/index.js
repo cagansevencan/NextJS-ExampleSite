@@ -10,6 +10,8 @@ function HomePage({playlists}) {
         <Head>
             <title>Main Page</title>
         </Head>
+
+
       <h1>Welcome to my first website!</h1>
 
       <h2>Here are my Spotify playlists</h2>
@@ -18,7 +20,6 @@ function HomePage({playlists}) {
       {playlists.items.map(playlist =>
         (
           <li key={playlist.id}>{playlist.name}</li>
-
         ))}
       </ul>
     </Layout>
@@ -30,10 +31,10 @@ function HomePage({playlists}) {
 
 export async function getStaticProps() {
 
-    const token = await APIController.getToken();
+  const token = await APIController.getToken();
   console.log("HERE");
-    console.log(token)
-    const playlists = await APIController.getPlaylistByUser(token);
+  console.log(token)
+  const playlists = await APIController.getPlaylistByUser(token);
   console.log(playlists);
   // data fetch
   return {
