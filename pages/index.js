@@ -6,7 +6,7 @@ import APIController from '../server/spotify-server'
 
 function HomePage({playlists}) {
   return (
-    <Layout> 
+    <Layout>
         <Head>
             <title>Main Page</title>
         </Head>
