@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import styles from './nav.module.css'
+import { signin, signout, useSession } from 'next-auth/client';
 
 function Navigation() {
+
+  const [session, loading] = useSession();
+
   return (
     <header>
     <nav>
@@ -14,15 +18,50 @@ function Navigation() {
       </Link>
       </p>
 
+
       <p>
-        <button className={"signInButton"}>Sign In</button>
+        {!session && (
+          <a href="/api/auth/signin"
+          onClick={(e) => {
+            e.preventDefault();
+            signin();
+          }}
+          >
+            <button className={"signInButton"}>Sign In</button>
+          </a>
+        )}
+        {session && (
+          <>
+          <Link href={"/about"}>
+            <a>
+              <span
+                style={{ backgroundImage: `url( ${session.user.image})` }}
+                className={"avatar"}
+            />
+            </a>
+          </Link>
+          <span className="email">{session.user.email}</span>
+          <a
+            href="/api/auth/signout"
+            onClick={(e) => {
+              e.preventDefault();
+              signout();
+            }}
+          >
+            <button className={"signOutButton"}>Sign out</button>
+          </a>
+          </>
+        )}
       </p>
     </nav>
+
+
       <style jsx>{`
+      
         header {
         border-bottom: 1px solid #ccc;
         }
-        
+
         nav {
         display: flex;
         justify-content: space-between;
@@ -31,12 +70,12 @@ function Navigation() {
         padding: 0.2rem 1.25rem;
         margin: 0 6% 0 0;
         }
-        
+
         p {
         display: flex;
         gap: 40px;
         }
-        
+
         .signInButton{
         background-color: #1eb1fc;
         color: #fff;
@@ -46,11 +85,20 @@ function Navigation() {
         font-size: 1rem;
         padding: 0.5rem 1rem;
         }
-        
+
         .signInButton:hover {
           background-color: #1b9fe2;
         }
         
+        .signOutButton {
+          background-color: #333;
+        }
+        
+        .signOutButton {
+          background-color: #555;
+        }
+        
+
       `}</style>
     </header>
   )
