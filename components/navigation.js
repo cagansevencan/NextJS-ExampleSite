@@ -27,7 +27,7 @@ function Navigation() {
           <a href="/api/auth/signin"
           onClick={(e) => {
             e.preventDefault();
-            signin('spotify', {callbackUrl: 'https://next-js-example-site.vercel.app/' });
+            signin('spotify', {callbackUrl: 'https://next-js-example-site.vercel.app//api/auth/callback/spotify' });
           }}
           >
             <button className={"signInButton"}>Sign In with Spotify</button>
