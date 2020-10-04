@@ -27,7 +27,7 @@ function Navigation() {
           <a href="/api/auth/signin"
           onClick={(e) => {
             e.preventDefault();
-            signin('spotify', {callbackUrl: 'https://next-js-example-site.vercel.app//api/auth/callback/spotify' });
+            signin('spotify');
           }}
           >
             <button className={"signInButton"}>Sign In with Spotify</button>
@@ -35,7 +35,7 @@ function Navigation() {
             <a href="/api/auth/signin"
                onClick={(e) => {
                  e.preventDefault();
-                 signin('twitter', {callbackUrl: 'https://next-js-example-site.vercel.app/' } );
+                 signin('twitter' );
                }}
             >
               <button className={"signInButton"}>Sign In with Twitter</button>
@@ -70,7 +70,7 @@ function Navigation() {
 
 
       <style jsx>{`
-      
+
         header {
         border-bottom: 1px solid #ccc;
         }
@@ -102,15 +102,15 @@ function Navigation() {
         .signInButton:hover {
           background-color: #1b9fe2;
         }
-        
+
         .signOutButton {
           background-color: #333;
         }
-        
+
         .signOutButton {
           background-color: #555;
         }
-        
+
 
       `}</style>
     </header>

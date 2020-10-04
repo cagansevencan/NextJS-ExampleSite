@@ -1,8 +1,9 @@
 import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
+import { redirect } from "next/dist/next-server/server/api-utils";
 
 const options = {
-  site: 'https://next-js-example-site.vercel.app/',
+  site: process.env.SITE || 'http://localhost:3000',
 
   // Configure one or more authentication providers
   providers: [
