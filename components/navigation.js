@@ -21,7 +21,7 @@ function Navigation() {
 
       <p>
         {!session && (
-          <a href="/api/auth/signin"
+          <a href="https://next-js-example-site.vercel.app/api/auth/signin"
           onClick={(e) => {
             e.preventDefault();
             signin();
