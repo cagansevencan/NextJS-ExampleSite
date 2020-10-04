@@ -2,7 +2,7 @@ import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
 
 const options = {
-  site: process.env.SITE || 'https://next-js-example-site.vercel.app/',
+  site: 'https://next-js-example-site.vercel.app/',
 
   // Configure one or more authentication providers
   providers: [
