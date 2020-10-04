@@ -11,15 +11,20 @@ function HomePage() {
 
   return (
     <Layout>
-        <Head>
           {session && (
             <>
-            <img src={session.user.image} className={"avatar"} />
+            <img src={session.user.image} className={"avatar"}  alt={"Image"}/>
             <h1>{session.user.name}</h1>
             </>
           )}
-        </Head>
       <h1>Hi!</h1>
+
+      <style jsx>{`
+        .avatar {
+          border-radius: 10px;
+        }
+      `}</style>
+
     </Layout>
   )
 }

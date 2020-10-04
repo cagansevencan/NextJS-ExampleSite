@@ -26,9 +26,6 @@ function HomePage({playlists}) {
   )
 }
 
-
-
-
 export async function getStaticProps() {
 
   const token = await APIController.getToken();
@@ -43,6 +40,5 @@ export async function getStaticProps() {
     },
   }
 }
-
 
 export default HomePage
