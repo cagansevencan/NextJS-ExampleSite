@@ -2,7 +2,9 @@ import Link from 'next/link'
 import styles from './nav.module.css'
 import { signin, signout, useSession } from 'next-auth/client';
 
+
 function Navigation() {
+  console.log();
 
   const [session, loading] = useSession();
 
@@ -21,14 +23,25 @@ function Navigation() {
 
       <p>
         {!session && (
-          <a href="https://next-js-example-site.vercel.app/api/auth/signin"
+          <>
+          <a href="/api/auth/signin"
           onClick={(e) => {
             e.preventDefault();
-            signin();
+            signin('spotify', {callbackUrl: 'https://next-js-example-site.vercel.app/' });
           }}
           >
-            <button className={"signInButton"}>Sign In</button>
+            <button className={"signInButton"}>Sign In with Spotify</button>
           </a>
+            <a href="/api/auth/signin"
+               onClick={(e) => {
+                 e.preventDefault();
+                 signin('twitter', {callbackUrl: 'https://next-js-example-site.vercel.app/' } );
+               }}
+            >
+              <button className={"signInButton"}>Sign In with Twitter</button>
+            </a>
+
+          </>
         )}
         {session && (
           <>

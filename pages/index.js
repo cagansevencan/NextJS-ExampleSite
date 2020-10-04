@@ -35,7 +35,7 @@ export async function getStaticProps() {
   console.log("HERE");
   console.log(token)
   const playlists = await APIController.getPlaylistByUser(token);
-  console.log(playlists);
+  //console.log(playlists);
   // data fetch
   return {
     props: {
