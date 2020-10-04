@@ -54,7 +54,7 @@ function Navigation() {
             />
             </a>
           </Link>
-          <span className="email">{session.user.email}</span>
+          <span className="email">{session.user.name}</span>
           <a
             href="/api/auth/signout"
             onClick={(e) => {
