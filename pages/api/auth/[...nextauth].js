@@ -3,7 +3,7 @@ import Providers from 'next-auth/providers'
 import { redirect } from "next/dist/next-server/server/api-utils";
 
 const options = {
-  site: process.env.SITE || 'http://localhost:3000',
+  site: 'http://localhost:3000' || process.env.NEXTAUTH_URL,
 
   // Configure one or more authentication providers
   providers: [

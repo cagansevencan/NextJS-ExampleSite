@@ -27,7 +27,7 @@ function Navigation() {
           <a href="/api/auth/signin"
           onClick={(e) => {
             e.preventDefault();
-            signin('spotify');
+            signin('');
           }}
           >
             <button className={"signInButton"}>Sign In with Spotify</button>
