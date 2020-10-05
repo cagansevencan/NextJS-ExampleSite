@@ -1,13 +1,17 @@
 import Layout from '../components/layout'
 import Head from "next/head";
 import { useSession } from 'next-auth/client'
+import Skeleton from 'react-loading-skeleton'
 
 function HomePage() {
 
   const [session, loading] = useSession();
 
-  if (loading) return <div>loading...</div>;
-  if (!session) return <div>no session</div>;
+  if (loading) return <div> <Skeleton/>
+  </div>;
+  if (!session) return <div>
+  No Session
+  </div>;
 
   return (
     <Layout>

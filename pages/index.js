@@ -19,9 +19,42 @@ function HomePage({playlists}) {
       <ul>
       {playlists.items.map(playlist =>
         (
-          <li key={playlist.id}>{playlist.name}</li>
+          <li key={playlist.id}>
+            <img src={playlist.images[0].url} className={"playlist-avatar"}  alt={"Image"} />
+            {playlist.name}
+          </li>
         ))}
       </ul>
+      <style jsx>{`
+      
+        h1{
+        margin-left: 10px;
+        }
+        
+        h2{
+        margin-left: 20px;
+        }
+      
+        ul{
+        display: grid;
+        gap: 20px;
+        }
+      
+        li{
+        display: grid;
+        grid-template-columns: 0fr 4fr;
+        align-items: center;
+        gap: 20px;
+        }
+      
+        .playlist-avatar {
+          border-radius: 0.4rem;
+          height: 8rem;
+          width: 8rem;
+          border: 0.5px solid #ddd;
+        }
+      `}</style>
+
     </Layout>
   )
 }
