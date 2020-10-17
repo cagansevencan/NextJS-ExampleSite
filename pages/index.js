@@ -1,5 +1,6 @@
 import Layout from '../components/layout'
 import Head from "next/head";
+import Link from 'next/link'
 import unfetch from "isomorphic-unfetch";
 
 import APIController from '../server/spotify-server'
@@ -21,7 +22,9 @@ function HomePage({playlists}) {
         (
           <li key={playlist.id}>
             <img src={playlist.images[0].url} className={"playlist-avatar"}  alt={"Image"} />
-            {playlist.name}
+            <Link href= "/post/[id]" as={`/post/${playlist.id}`} >
+              <a> {playlist.name} </a>
+              </Link>
           </li>
         ))}
       </ul>
@@ -65,7 +68,7 @@ export async function getStaticProps() {
   console.log("HERE");
   console.log(token)
   const playlists = await APIController.getPlaylistByUser(token);
-  //console.log(playlists);
+  console.log(playlists);
   // data fetch
   return {
     props: {
