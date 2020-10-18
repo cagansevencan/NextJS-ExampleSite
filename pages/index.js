@@ -2,6 +2,7 @@ import Layout from '../components/layout'
 import Head from "next/head";
 import Link from 'next/link'
 import unfetch from "isomorphic-unfetch";
+import slug from 'slug'
 
 import APIController from '../server/spotify-server'
 
@@ -22,7 +23,7 @@ function HomePage({playlists}) {
         (
           <li key={playlist.id}>
             <img src={playlist.images[0].url} className={"playlist-avatar"}  alt={"Image"} />
-            <Link href= "/post/[id]" as={`/post/${playlist.id}`} >
+            <Link href= "/post/[slug]" as={`/post/${slug(playlist.name)}-${playlist.id}`} >
               <a> {playlist.name} </a>
               </Link>
           </li>
