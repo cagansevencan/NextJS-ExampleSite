@@ -21,8 +21,8 @@ function TrackDetail({}) {
 }
 
 
-export async function getStaticPaths() {
 
+export async function getStaticPaths() {
   const token = await APIController.getToken();
   const playlists = await APIController.getPlaylistByUser(token);
 

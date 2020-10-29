@@ -6,7 +6,10 @@ import { signin, signout, useSession } from 'next-auth/client';
 function Navigation() {
 
   const [session, loading] = useSession();
-  console.log("First Session:" + session);
+  console.log('SESSION', session.accessToken)
+
+
+
   return (
     <header>
       <noscript>
