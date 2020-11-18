@@ -14,7 +14,7 @@ function HomePage({playlists}) {
         </Head>
 
 
-      <h1>Welcome to my first website!</h1>
+      <h1>Welcome to my example website!</h1>
 
       <h2>Here are my Spotify playlists</h2>
 
